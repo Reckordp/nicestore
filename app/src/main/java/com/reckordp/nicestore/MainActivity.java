@@ -1,6 +1,7 @@
 package com.reckordp.nicestore;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -28,5 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recycle = findViewById(R.id.lapak);
         recycle.setAdapter(adapter);
+        recycle.setLayoutManager(new LinearLayoutManager(this));
+        recycle.setHasFixedSize(true);
     }
 }
