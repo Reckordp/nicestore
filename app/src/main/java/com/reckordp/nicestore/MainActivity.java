@@ -1,6 +1,7 @@
 package com.reckordp.nicestore;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.ListView;
@@ -24,10 +25,9 @@ public class MainActivity extends AppCompatActivity {
         deret.add(new LapakNiceStore(R.drawable.wallet_dicky, "Wallet Dicky"));
         deret.add(new LapakNiceStore(R.drawable.wallet_lives, "Wallet Lives"));
 
-        LapakAdapter adapter = new LapakAdapter(MainActivity.this,
-                R.layout.lapak_detail, deret);
+        LapakAdapter adapter = new LapakAdapter(R.layout.lapak_detail, deret);
 
-        ListView lview = findViewById(R.id.lapak);
-        lview.setAdapter(adapter);
+        RecyclerView recycle = findViewById(R.id.lapak);
+        recycle.setAdapter(adapter);
     }
 }
