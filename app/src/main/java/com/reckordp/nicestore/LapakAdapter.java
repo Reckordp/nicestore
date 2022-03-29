@@ -1,5 +1,6 @@
 package com.reckordp.nicestore;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -9,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class LapakAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class LapakAdapter extends RecyclerView.Adapter<LapakAdapterViewHolder> {
     int layout;
     List<DetailLapak> objects;
 
@@ -39,13 +40,18 @@ public class LapakAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    public LapakAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        ViewGroup layoutGroup = (ViewGroup) inflater.inflate(layout, parent, false);
+        return new LapakAdapterViewHolder(layoutGroup);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull LapakAdapterViewHolder holder, int position) {
+        DetailLapak item = objects.get(position);
+        if (item != null) {
+            item.performDetail(holder.itemView);
+        }
     }
 
     @Override
