@@ -21,24 +21,6 @@ public class LapakAdapter extends RecyclerView.Adapter<LapakAdapterViewHolder> {
     }
 
     @NonNull
-    public View getView(int position, @Nullable View view, @NonNull ViewGroup parent) {
-//        final Context ctx = getContext();
-//
-//        if (view == null) {
-//            LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//            view = inflater.inflate(R.layout.lapak_detail, parent, false);
-//        }
-
-        DetailLapak item = objects.get(position);
-
-        if (item != null) {
-            item.performDetail(view);
-        }
-
-        return view;
-    }
-
-    @NonNull
     @Override
     public LapakAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
