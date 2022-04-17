@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">NiceStore</string>
-    <string name="preview_merchant">contentDescription</string>
+    <string name="preview_merchant">Picture of merchant</string>
+    <string name="merchant_id">Merchant Name</string>
+    <string name="mata_uang">Rp</string>
+    <string name="merchant_harga_default">999</string>
+    <string name="merchant_beli_text">Beli</string>
 </resources>

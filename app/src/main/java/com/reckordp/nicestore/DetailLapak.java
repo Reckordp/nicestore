@@ -1,7 +1,7 @@
 package com.reckordp.nicestore;
 
-import android.view.View;
+import androidx.annotation.NonNull;
 
 public interface DetailLapak {
-    void performDetail(View area);
+    void performDetail(@NonNull LapakAdapterViewHolder area);
 }

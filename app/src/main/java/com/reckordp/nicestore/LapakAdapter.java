@@ -30,7 +30,7 @@ public class LapakAdapter extends RecyclerView.Adapter<LapakAdapterViewHolder> {
     public void onBindViewHolder(@NonNull LapakAdapterViewHolder holder, int position) {
         DetailLapak item = objects.get(position);
         if (item != null) {
-            item.performDetail(holder.itemView);
+            item.performDetail(holder);
         }
     }
 
