@@ -16,7 +16,7 @@ public class LapakAdapterViewHolder extends RecyclerView.ViewHolder implements V
 
     public LapakAdapterViewHolder(@NonNull ViewGroup itemView) {
         super((View) itemView);
-        itemView.setOnClickListener(this);
+        itemView.findViewById(R.id.kartu_toko).setOnClickListener(this);
     }
 
     @Override
