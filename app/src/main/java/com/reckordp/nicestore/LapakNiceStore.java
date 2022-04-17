@@ -23,7 +23,6 @@ public class LapakNiceStore implements DetailLapak {
         Glide.with(activity)
                 .load(uri)
                 .into(image);
-        image.setImageResource(thumbnail);
         TextView text = area.findViewById(R.id.teks);
         text.setText(this.teks);
     }
