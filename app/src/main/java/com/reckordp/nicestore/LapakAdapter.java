@@ -1,5 +1,6 @@
 package com.reckordp.nicestore;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -29,6 +30,7 @@ public class LapakAdapter extends RecyclerView.Adapter<LapakAdapterViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull LapakAdapterViewHolder holder, int position) {
         DetailLapak item = objects.get(position);
+        holder.setLapak(item);
         if (item != null) {
             item.performDetail(holder);
         }
