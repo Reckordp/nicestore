@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -22,14 +23,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ArrayList<DetailLapak> deret = new ArrayList<>();
-        deret.add(new LapakNiceStore(R.drawable.black_japanese, "Black Japanese"));
-        deret.add(new LapakNiceStore(R.drawable.gray_japanese, "Gray Japanese"));
-        deret.add(new LapakNiceStore(R.drawable.navy_japanese, "Navy Japanese"));
-        deret.add(new LapakNiceStore(R.drawable.red_japanese, "Red Japanese"));
-        deret.add(new LapakNiceStore(R.drawable.wallet, "Wallet"));
-        deret.add(new LapakNiceStore(R.drawable.mont_blanc, "Mont Blanc"));
-        deret.add(new LapakNiceStore(R.drawable.wallet_dicky, "Wallet Dicky"));
-        deret.add(new LapakNiceStore(R.drawable.wallet_lives, "Wallet Lives"));
+        TypedArray thumbnail = getResources().obtainTypedArray(R.array.thumbnail);
+        String[] namaLapak = getResources().getStringArray(R.array.nama_lapak);
+        int[] hargaLapak = getResources().getIntArray(R.array.harga);
+        for (int i = 0; i < thumbnail.length(); i++) {
+            LapakNiceStore lapak = new LapakNiceStore();
+            lapak.nama = namaLapak[i];
+            lapak.thumbnail = thumbnail.getResourceId(i, -1);
+            lapak.harga = hargaLapak[i];
+            deret.add(lapak);
+        }
+        thumbnail.recycle();
 
         LapakAdapter adapter = new LapakAdapter(R.layout.lapak_detail, deret);
 

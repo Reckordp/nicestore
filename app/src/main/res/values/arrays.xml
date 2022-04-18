@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="thumbnail">
+        <item>@drawable/black_japanese</item>
+        <item>@drawable/gray_japanese</item>
+        <item>@drawable/navy_japanese</item>
+        <item>@drawable/red_japanese</item>
+        <item>@drawable/wallet</item>
+        <item>@drawable/mont_blanc</item>
+        <item>@drawable/wallet_dicky</item>
+        <item>@drawable/wallet_lives</item>
+    </array>
+    <string-array name="nama_lapak">
+        <item>Black Japanese</item>
+        <item>Gray Japanese</item>
+        <item>Navy Japanese</item>
+        <item>Red Japanese</item>
+        <item>Wallet</item>
+        <item>Mont Blanc</item>
+        <item>Wallet Dicky</item>
+        <item>Wallet Lives</item>
+    </string-array>
+    <integer-array name="harga">
+        <item>7700</item>
+        <item>7700</item>
+        <item>7700</item>
+        <item>7700</item>
+        <item>10000</item>
+        <item>7000</item>
+        <item>10000</item>
+        <item>10000</item>
+    </integer-array>
+</resources>

@@ -16,9 +16,7 @@ public class LapakNiceStore implements DetailLapak {
     int harga;
     Uri jalurUri;
 
-    LapakNiceStore(int thumbnail, String teks) {
-        this.thumbnail = thumbnail;
-        this.nama = teks;
+    LapakNiceStore() {
     }
 
     LapakNiceStore(Parcel src) {
