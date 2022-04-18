@@ -1,9 +1,12 @@
 package com.reckordp.nicestore;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +17,11 @@ public class BeliLapak extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+
         setContentView(R.layout.activity_beli_lapak);
         Intent intent = getIntent();
         LapakNiceStore lapak;
@@ -37,5 +45,15 @@ public class BeliLapak extends AppCompatActivity {
         Glide.with(this)
                 .load(lapak.jalurUri)
                 .into((ImageView) findViewById(R.id.merchant_thumbnail));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

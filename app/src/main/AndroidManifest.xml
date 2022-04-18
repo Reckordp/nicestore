@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NiceStore">
         <activity
-            android:name=".BeliLapak" />
+            android:name=".BeliLapak"
+            android:label="@string/beli_activity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
