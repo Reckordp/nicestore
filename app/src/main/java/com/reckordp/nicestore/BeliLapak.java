@@ -24,12 +24,14 @@ public class BeliLapak extends AppCompatActivity {
         int ribuan = 1;
         int hasil = 1;
         StringBuilder teks = new StringBuilder();
-        while(hasil != 0) {
+        while(true) {
             hasil = harga / ribuan;
-            if (hasil == 1) break;
-            teks.insert(0, hasil);
-            if (hasil != 0) teks.insert(0, ".");
+            if (hasil <= 1) break;
+            teks.insert(0, hasil % 1000);
+            teks.insert(0, ".");
+            ribuan *= 1000;
         }
+        teks.deleteCharAt(0);
         ((TextView)findViewById(R.id.merchant_harga)).setText(teks.toString());
 
         Glide.with(this)
