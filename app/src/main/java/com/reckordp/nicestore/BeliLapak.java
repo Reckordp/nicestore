@@ -35,6 +35,7 @@ public class BeliLapak extends AppCompatActivity implements View.OnClickListener
         int ribuan = 1;
         int hasil = 1;
         StringBuilder teks = new StringBuilder();
+        StringBuilder ketikan = new StringBuilder();
         while(true) {
             hasil = harga / ribuan;
             if (hasil <= 1) break;
@@ -56,10 +57,9 @@ public class BeliLapak extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
