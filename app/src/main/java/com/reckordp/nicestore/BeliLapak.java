@@ -38,8 +38,10 @@ public class BeliLapak extends AppCompatActivity implements View.OnClickListener
         while(true) {
             hasil = harga / ribuan;
             if (hasil <= 1) break;
-            teks.insert(0, hasil % 1000);
-            teks.insert(0, ".");
+            ketikan.insert(0, hasil % 1000);
+            while (ketikan.length() < 3) ketikan.insert(0, 0);
+            ketikan.insert(0, ".");
+            teks.insert(0, ketikan);
             ribuan *= 1000;
         }
         teks.deleteCharAt(0);
