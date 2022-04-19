@@ -33,12 +33,13 @@ public class BeliLapak extends AppCompatActivity implements View.OnClickListener
         ((TextView)findViewById(R.id.merchant_id)).setText(lapak.nama);
         int harga = lapak.harga;
         int ribuan = 1;
-        int hasil = 1;
+        int hasil;
         StringBuilder teks = new StringBuilder();
         StringBuilder ketikan = new StringBuilder();
         while(true) {
             hasil = harga / ribuan;
             if (hasil <= 1) break;
+            if (ketikan.length() > 0) ketikan.delete(0, ketikan.length());
             ketikan.insert(0, hasil % 1000);
             while (ketikan.length() < 3) ketikan.insert(0, 0);
             ketikan.insert(0, ".");
@@ -46,6 +47,7 @@ public class BeliLapak extends AppCompatActivity implements View.OnClickListener
             ribuan *= 1000;
         }
         teks.deleteCharAt(0);
+        while(teks.charAt(0) == '0') teks.deleteCharAt(0);
         ((TextView)findViewById(R.id.merchant_harga)).setText(teks.toString());
 
         Glide.with(this)
